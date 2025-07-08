@@ -2,9 +2,13 @@
 {
     public class Class1 : IClass1
     {
-        public IDictionary<int, string> PrintValue(int start, int max, List<Tuple<int, string>> rules)
+        public ICollection<string> PrintValue(int start, int max, List<Tuple<int, string>> rules)
         {
             IDictionary<int, string> printedValues = new Dictionary<int, string>();
+            if (rules is null)
+            {
+                rules = new List<Tuple<int, string>>();
+            }
             for (var x = start; x <= max; x++)
             {
                 // Add unit tests
@@ -24,7 +28,7 @@
                 printedValues.Add(x, ruleValue);
             }
 
-            return printedValues;          
+            return printedValues.Values;          
                 
         }
     }

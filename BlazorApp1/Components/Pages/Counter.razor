@@ -8,7 +8,7 @@
 
 
 
-@foreach (var x in PrintValueResult(1, int.MaxValue))
+@foreach (var x in PrintValueResult(1, 100))
 {
     <p>@x</p>
 }
@@ -29,7 +29,7 @@
         rules.Add(new Tuple<int, string>(3, "patrick"));
         rules.Add(new Tuple<int, string>(5, "towle"));
 
-        return library.PrintValue(min, max, rules).Values;
+        return library.PrintValue(min, max, rules);
     }
 
 

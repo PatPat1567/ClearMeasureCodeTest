@@ -8,6 +8,6 @@ namespace ClassLibrary1
 {
     public interface IClass1
     {
-        IDictionary<int, string> PrintValue(int start, int max, List<Tuple<int, string>> rules);
+        ICollection<string> PrintValue(int start, int max, List<Tuple<int, string>> rules);
     }
 }
