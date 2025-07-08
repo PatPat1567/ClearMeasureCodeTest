@@ -7,6 +7,8 @@
             IDictionary<int, string> printedValues = new Dictionary<int, string>();
             for (var x = start; x <= max; x++)
             {
+                // Add unit tests
+                // Clean up so it doesn't hang when passed int.max
                 var ruleValue = "";
                 foreach (var rule in rules)
                 {
