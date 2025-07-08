@@ -1,0 +1,37 @@
+﻿@page "/counter"
+@using ClassLibrary1
+@rendermode InteractiveServer
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter to 100</h1>
+
+
+
+@foreach (var x in PrintValueResult(1, int.MaxValue))
+{
+    <p>@x</p>
+}
+    
+
+
+
+@code {
+    [Inject]
+    private IClass1 library { get; set; }
+
+    private int currentCount = 0;
+
+    private List<Tuple<int, string>> rules = new List<Tuple<int, string>>();
+
+    private ICollection<string> PrintValueResult(int min, int max)
+    {
+        rules.Add(new Tuple<int, string>(3, "patrick"));
+        rules.Add(new Tuple<int, string>(5, "towle"));
+
+        return library.PrintValue(min, max, rules).Values;
+    }
+
+
+    
+}
